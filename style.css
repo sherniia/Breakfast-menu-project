@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+:root {
+    --background: whitesmoke;
+    --background-dark: #000000b7;
+    --shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    --text-color1: #decdc2;
+    --text-color2: #a64b12;
+    --color1: #f7ce95;
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Itim', 'sans-serif';
+    /* background-color: var(--background-dark); */
+    background-image: linear-gradient(grey, black);
+    color: var(--text-color1);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    color: var(--text-color1);
+    padding-bottom: 10px;
+    position: relative;
+}
+h1:before{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    bottom: 0;
+    left: 35%;
+    border-bottom: 4px solid orange;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: orange;
+    font-size: large;
+}
+
+.main-container {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    column-gap: 30px;
+    margin: 0 10%;
+    padding: 40px 20px;
+}
+
+.card {
+    height: 130px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    font-size: 15px;
+}
+
+.img {
+    /* background-image: url(./images/item-1.jpeg); */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    border: solid orange 2px;
+    border-radius: 10px;
+}
+
+.description {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgb(249, 194, 101);
+    margin-bottom: 15px;
+    font-size: larger;
+}
+
+.price {
+    display: inline-block;
+    color: #11d0bd;
+}
