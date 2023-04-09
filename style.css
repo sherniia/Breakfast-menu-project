@@ -18,7 +18,7 @@ body {
     padding: 0;
     font-family: 'Itim', 'sans-serif';
     /* background-color: var(--background-dark); */
-    background-image: linear-gradient(grey, black);
+    background-color: black;
     color: var(--text-color1);
 }
 

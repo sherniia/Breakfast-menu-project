@@ -68,3 +68,4 @@ allBtn.addEventListener('click', ()=> {
     clear();
     getFoodData();
 })
+
