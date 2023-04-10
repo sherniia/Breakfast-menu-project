@@ -69,3 +69,51 @@ allBtn.addEventListener('click', ()=> {
     getFoodData();
 })
 
+//Shakes button (Mairam)
+
+async function getShakesData() {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    const shakesData = data.filter(item => item.category === 'shakes');
+    
+    shakesData.forEach(food => {
+        // create card div and populate it with img and description
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const img = document.createElement('div');
+        img.classList.add('img');
+        img.style.backgroundImage = `url(${food.img})`;
+
+        const description = document.createElement('div');
+        description.classList.add('description');
+
+        card.appendChild(img);
+        card.appendChild(description);
+
+        mainContainer.appendChild(card);
+
+        // Populate description with Title and Price;
+        const foodTitle = document.createElement('div');
+        foodTitle.classList.add('title');
+        foodTitle.innerHTML = `<strong>${food.title}</strong> 
+        <div class="price">${food.price}</div>`;
+
+        const ingredients = document.createElement('div');
+        // cleaning description from ' sign;
+        food.desc = food.desc.replace(/[`]/g, "")
+        ingredients.innerHTML = `<div class="ingredients">${food.desc}</div>`;
+
+        description.appendChild(foodTitle);
+        description.appendChild(ingredients);
+    })
+}
+
+
+//Adding event listener to 'Shakes' button;
+const shakesBtn = document.querySelector('#shakes');
+shakesBtn.addEventListener('click', () => {
+  clear();
+  getShakesData();
+});
+
