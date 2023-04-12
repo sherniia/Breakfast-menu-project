@@ -69,3 +69,9 @@ allBtn.addEventListener('click', ()=> {
     getFoodData();
 })
 
+const lunchBtn = document.querySelector("#lunch");
+
+lunchBtn.addEventListener("click", function () {
+  getFoodData("lunch");
+});
+
