@@ -73,3 +73,9 @@ breakfastBtn.addEventListener("click", () => {
   clear();
   getFoodData("breakfast");
 });
+
+const lunchBtn = document.querySelector("#lunch");
+
+lunchBtn.addEventListener("click", function () {
+  getFoodData("lunch");
+});
