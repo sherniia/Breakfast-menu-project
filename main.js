@@ -6,7 +6,7 @@ const apiUrl =
 async function getFoodData(category) {
   const response = await fetch(apiUrl);
   const data = await response.json();
-  console.log(data[0]);
+  console.log(data);
   data.forEach((food) => {
     if (food.category !== category && category !== "all") return;
     // create card div and populate it with img and description
@@ -25,7 +25,6 @@ async function getFoodData(category) {
 
     mainContainer.appendChild(card);
 
-    console.log("line 23");
 
     // populate description with title and price
 
@@ -77,5 +76,13 @@ breakfastBtn.addEventListener("click", () => {
 const lunchBtn = document.querySelector("#lunch");
 
 lunchBtn.addEventListener("click", function () {
+  clear();
   getFoodData("lunch");
+});
+
+const shakesBtn = document.querySelector("#shakes");
+
+shakesBtn.addEventListener("click", function () {
+  clear();
+  getFoodData("shakes");
 });
